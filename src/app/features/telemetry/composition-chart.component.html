@@ -1,0 +1,21 @@
+<div class="sep-composition" [attr.aria-label]="t('a11y.compositionSummary')">
+  <h3>{{ t('telemetry.composition') }}</h3>
+  <div class="sep-composition__bar">
+    @for (seg of segments(); track seg.key) {
+      <span
+        class="sep-composition__seg"
+        [style.width.%]="seg.value * 100"
+        [style.background]="seg.color"
+        [title]="t(seg.key) + ': ' + pct(seg.value)"
+      ></span>
+    }
+  </div>
+  <ul class="sep-composition__legend">
+    @for (seg of segments(); track seg.key) {
+      <li>
+        <span class="dot" [style.background]="seg.color"></span>
+        {{ t(seg.key) }} {{ pct(seg.value) }}
+      </li>
+    }
+  </ul>
+</div>

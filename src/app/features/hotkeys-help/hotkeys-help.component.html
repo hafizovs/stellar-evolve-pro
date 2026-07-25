@@ -1,0 +1,23 @@
+@if (visible()) {
+  <div class="sep-hotkeys-overlay" (click)="onBackdropClick($event)" role="dialog" aria-modal="true">
+    <div class="sep-hotkeys-panel">
+      <header>
+        <h2>{{ t('hotkeys.title') }}</h2>
+        <button type="button" class="sep-hotkeys-close" (click)="close()" autofocus>
+          {{ t('hotkeys.close') }}
+        </button>
+      </header>
+      <ul>
+        <li>{{ t('hotkeys.space') }}</li>
+        <li>{{ t('hotkeys.r') }}</li>
+        <li>{{ t('hotkeys.c') }}</li>
+        <li>{{ t('hotkeys.presets') }}</li>
+        <li>{{ t('hotkeys.s') }}</li>
+        <li>{{ t('hotkeys.t') }}</li>
+        <li>{{ t('hotkeys.g') }}</li>
+        <li>{{ t('hotkeys.h') }}</li>
+        <li>{{ t('hotkeys.esc') }}</li>
+      </ul>
+    </div>
+  </div>
+}

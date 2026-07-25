@@ -1,0 +1,34 @@
+<header class="sep-toolbar">
+  <div class="sep-toolbar__brand">
+    <strong>{{ t('brand.title') }}</strong>
+    <span>{{ t('brand.subtitle') }}</span>
+  </div>
+
+  <div class="sep-toolbar__presets">
+    @for (preset of presets; track preset.id) {
+      <button
+        type="button"
+        class="sep-toolbar__preset"
+        [attr.aria-label]="t(preset.labelKey)"
+        (click)="applyPreset(preset.id)"
+      >
+        {{ t(preset.labelKey) }}
+      </button>
+    }
+  </div>
+
+  <div class="sep-toolbar__spacer"></div>
+
+  <button type="button" class="sep-toolbar__action" [attr.aria-label]="t('toolbar.screenshot')" (click)="captureScreenshot()">
+    {{ t('toolbar.screenshot') }}
+  </button>
+  <button type="button" class="sep-toolbar__action" [attr.aria-label]="t('toolbar.theme')" (click)="toggleTheme()">
+    {{ t('toolbar.theme') }}
+  </button>
+  <button type="button" class="sep-toolbar__action" [attr.aria-label]="t('toolbar.lang')" (click)="toggleLocale()">
+    {{ localeLabel() }}
+  </button>
+  <button type="button" class="sep-toolbar__action" [attr.aria-label]="t('toolbar.hotkeys')" (click)="openHotkeys()">
+    {{ t('toolbar.hotkeys') }}
+  </button>
+</header>

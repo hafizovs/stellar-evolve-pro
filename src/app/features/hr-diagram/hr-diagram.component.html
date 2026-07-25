@@ -1,0 +1,101 @@
+<section class="sep-hr-diagram">
+  <header class="sep-hr-diagram__header">
+    <h2>{{ t('hr.title') }}</h2>
+    @if (phase() === 'rewound') {
+      <span class="sep-hr-diagram__chip">{{ t('hr.rewound') }}</span>
+    }
+  </header>
+  <div class="sep-hr-diagram__plot" (click)="onSvgClick($event)">
+    <svg
+      #svg
+      [attr.viewBox]="viewBox()"
+      width="100%"
+      height="100%"
+      role="img"
+      [attr.aria-label]="t('hr.aria')"
+    >
+      <title>{{ t('hr.title') }}</title>
+      <rect
+        [attr.x]="plot().x"
+        [attr.y]="plot().y"
+        [attr.width]="plot().width"
+        [attr.height]="plot().height"
+        class="sep-hr-diagram__plot-area"
+      />
+      @for (line of gridLinesTeff(); track line.x) {
+        <line
+          [attr.x1]="line.x"
+          [attr.y1]="plot().y"
+          [attr.x2]="line.x"
+          [attr.y2]="plot().y + plot().height"
+          class="sep-hr-diagram__grid"
+        />
+        <text [attr.x]="line.x" [attr.y]="plot().y + plot().height + 14" class="sep-hr-diagram__tick">
+          {{ line.label }}
+        </text>
+      }
+      @for (line of gridLinesLum(); track line.y) {
+        <line
+          [attr.x1]="plot().x"
+          [attr.y1]="line.y"
+          [attr.x2]="plot().x + plot().width"
+          [attr.y2]="line.y"
+          class="sep-hr-diagram__grid"
+        />
+        <text [attr.x]="plot().x - 6" [attr.y]="line.y + 4" class="sep-hr-diagram__tick-y" text-anchor="end">
+          {{ line.label }}
+        </text>
+      }
+      <path [attr.d]="giantsPath()" class="sep-hr-diagram__region-giants" />
+      <path [attr.d]="wdPath()" class="sep-hr-diagram__region-wd" />
+      <path [attr.d]="msPath()" class="sep-hr-diagram__ms" />
+      @if (trackPath()) {
+        <path [attr.d]="trackPath()" class="sep-hr-diagram__track" />
+      }
+      <circle
+        [attr.cx]="markerPos().x"
+        [attr.cy]="markerPos().y"
+        r="5"
+        [attr.fill]="markerColor()"
+        class="sep-hr-diagram__marker"
+      />
+      <circle
+        [attr.cx]="markerPos().x"
+        [attr.cy]="markerPos().y"
+        r="9"
+        class="sep-hr-diagram__marker-ring"
+      />
+      @for (mark of spectralMarks; track mark.cls) {
+        <text
+          [attr.x]="spectralX(mark.teffK)"
+          [attr.y]="plot().y + plot().height + 32"
+          class="sep-hr-diagram__spectral"
+          text-anchor="middle"
+        >
+          {{ mark.cls }}
+        </text>
+      }
+      <text [attr.x]="plot().x + plot().width / 2" [attr.y]="svgHeight() - 4" class="sep-hr-diagram__axis" text-anchor="middle">
+        {{ t('hr.teffAxis') }}
+      </text>
+      <text
+        [attr.x]="12"
+        [attr.y]="plot().y + plot().height / 2"
+        class="sep-hr-diagram__axis-y"
+        text-anchor="middle"
+        [attr.transform]="'rotate(-90 12 ' + (plot().y + plot().height / 2) + ')'"
+      >
+        {{ t('hr.lumAxis') }}
+      </text>
+    </svg>
+  </div>
+  <footer class="sep-hr-diagram__footer">
+    <p class="sep-hr-diagram__hint">{{ t('hr.rewindHint') }}</p>
+    <ul class="sep-hr-diagram__legend">
+      <li><span class="swatch swatch--ms"></span>{{ t('hr.legendMs') }}</li>
+      <li><span class="swatch swatch--giants"></span>{{ t('hr.legendGiants') }}</li>
+      <li><span class="swatch swatch--wd"></span>{{ t('hr.legendWd') }}</li>
+      <li><span class="swatch swatch--track"></span>{{ t('hr.legendTrack') }}</li>
+    </ul>
+  </footer>
+</section>

@@ -1,0 +1,39 @@
+<section class="sep-telemetry">
+  <h2>{{ t('telemetry.title') }}</h2>
+
+  @if (state().isTerminal) {
+    <div class="sep-telemetry__terminal">
+      {{ t('telemetry.terminal') }} — {{ t('remnant.' + state().remnantKind) }}
+    </div>
+  }
+
+  <dl class="sep-telemetry__grid">
+    <dt>{{ t('telemetry.age') }}</dt>
+    <dd>{{ fmtAge(state().ageYears) }}</dd>
+    <dt>{{ t('telemetry.remaining') }}</dt>
+    <dd>{{ fmtAge(state().remainingLifeYears) }}</dd>
+    <dt>{{ t('telemetry.stage') }}</dt>
+    <dd>{{ t('stage.' + state().stage) }}</dd>
+    <dt>{{ t('telemetry.burning') }}</dt>
+    <dd>{{ t('burning.' + state().burningMode) }}</dd>
+    <dt>{{ t('telemetry.mass') }}</dt>
+    <dd>{{ fmtM(state().params.massSolar) }}</dd>
+    <dt>{{ t('telemetry.radius') }}</dt>
+    <dd>{{ fmtR(state().params.radiusSolar) }}</dd>
+    <dt>{{ t('telemetry.luminosity') }}</dt>
+    <dd>{{ fmtL(state().params.luminositySolar) }}</dd>
+    <dt>{{ t('telemetry.teff') }}</dt>
+    <dd>{{ fmtT(state().params.teffK) }}</dd>
+    <dt>{{ t('telemetry.spectral') }}</dt>
+    <dd>{{ state().params.spectralClass }}</dd>
+    <dt>{{ t('telemetry.pressure') }}</dt>
+    <dd>{{ fmtP(state().params.corePressurePa) }}</dd>
+  </dl>
+
+  <div class="sep-telemetry__process">
+    <h3>{{ t('telemetry.process') }}</h3>
+    <p>{{ t(processId()) }}</p>
+  </div>
+
+  <sep-composition-chart />
+</section>

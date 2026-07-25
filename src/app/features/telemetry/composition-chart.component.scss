@@ -1,0 +1,48 @@
+.sep-composition {
+  h3 {
+    margin: 0 0 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sep-text-muted);
+  }
+}
+
+.sep-composition__bar {
+  display: flex;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--sep-border);
+}
+
+.sep-composition__seg {
+  display: block;
+  height: 100%;
+  transition: width 180ms ease;
+  min-width: 1px;
+}
+
+.sep-composition__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.72rem;
+  font-family: var(--sep-font-mono);
+  color: var(--sep-text-muted);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+  }
+}

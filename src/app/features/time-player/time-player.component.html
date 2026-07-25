@@ -1,0 +1,31 @@
+<div class="sep-time-player">
+  <button
+    type="button"
+    class="sep-btn sep-btn--primary"
+    [attr.aria-pressed]="isPlaying()"
+    [attr.aria-label]="t('a11y.playPause')"
+    [disabled]="phase() === 'terminal'"
+    (click)="togglePlay()"
+  >
+    {{ isPlaying() ? t('time.pause') : t('time.play') }}
+  </button>
+  <button type="button" class="sep-btn" (click)="reset()">{{ t('time.reset') }}</button>
+
+  <label class="sep-time-player__accel">
+    {{ t('time.accel') }} ×{{ timeAccel().toFixed(2) }}
+    <input
+      type="range"
+      [min]="accelMin"
+      [max]="accelMax"
+      step="0.25"
+      [value]="timeAccel()"
+      (input)="onAccelInput($event)"
+    />
+  </label>
+
+  <div class="sep-time-player__readouts">
+    <span>{{ t('time.dt') }}: {{ fmtDt(lastDt()) }}</span>
+    <span>{{ t('time.age') }}: {{ fmtAge(age()) }}</span>
+    <span class="sep-time-player__phase" [class]="phaseClass()">{{ t('phase.' + phase()) }}</span>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<section class="sep-stellar-view" [attr.aria-label]="t('stellar.title')">
+  <header class="sep-stellar-view__header">
+    <h2>{{ t('stellar.title') }}</h2>
+    <label class="sep-stellar-view__toggle">
+      <input
+        type="checkbox"
+        [checked]="showCore()"
+        (change)="toggleCore($event)"
+        [attr.aria-label]="t('a11y.coreToggle')"
+      />
+      {{ t('stellar.coreSection') }}
+    </label>
+  </header>
+  <div class="sep-stellar-view__canvas-wrap">
+    <canvas #canvas></canvas>
+  </div>
+  <p class="sep-stellar-view__badge">{{ t('stage.' + stage()) }}</p>
+</section>

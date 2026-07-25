@@ -1,0 +1,30 @@
+<div class="sep-control-room">
+  <nav class="sep-control-room__tabs" aria-label="Mobile tabs">
+    <button type="button" [class.active]="mobileTab() === 'star'" (click)="setTab('star')">
+      {{ t('mobile.tabStar') }}
+    </button>
+    <button type="button" [class.active]="mobileTab() === 'hr'" (click)="setTab('hr')">
+      {{ t('mobile.tabHr') }}
+    </button>
+    <button type="button" [class.active]="mobileTab() === 'data'" (click)="setTab('data')">
+      {{ t('mobile.tabData') }}
+    </button>
+  </nav>
+
+  <div class="sep-control-room__grid">
+    <div class="sep-control-room__star" [class.sep-control-room__panel--hidden]="mobileTab() !== 'star'">
+      <sep-stellar-view />
+    </div>
+    <div class="sep-control-room__hr" [class.sep-control-room__panel--hidden]="mobileTab() !== 'hr'">
+      <sep-hr-diagram />
+    </div>
+    <div class="sep-control-room__telemetry" [class.sep-control-room__panel--hidden]="mobileTab() !== 'data'">
+      <sep-telemetry-panel />
+    </div>
+  </div>
+
+  <footer class="sep-control-room__bottom">
+    <sep-initial-controls />
+    <sep-time-player />
+  </footer>
+</div>

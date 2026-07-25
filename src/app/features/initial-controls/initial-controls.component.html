@@ -1,0 +1,50 @@
+<div class="sep-initial-controls">
+  <div class="sep-initial-controls__field">
+    <label for="mass-log">{{ t('controls.mass') }}</label>
+    <input
+      id="mass-log"
+      type="range"
+      [min]="logMassMin"
+      [max]="logMassMax"
+      step="0.01"
+      [value]="logMassValue()"
+      [disabled]="disabled()"
+      (input)="onMassLogInput($event)"
+      [attr.aria-valuemin]="massMin"
+      [attr.aria-valuemax]="massMax"
+      [attr.aria-valuenow]="mass()"
+    />
+    <input
+      type="number"
+      class="sep-initial-controls__num"
+      [min]="massMin"
+      [max]="massMax"
+      step="0.01"
+      [value]="mass()"
+      [disabled]="disabled()"
+      (change)="onMassNumberInput($event)"
+    />
+  </div>
+
+  <div class="sep-initial-controls__field">
+    <label for="metallicity">{{ t('controls.metallicity') }}</label>
+    <input
+      id="metallicity"
+      type="range"
+      [min]="zMin"
+      [max]="zMax"
+      step="0.0001"
+      [value]="metallicity()"
+      [disabled]="disabled()"
+      (input)="onZInput($event)"
+      [attr.aria-valuemin]="zMin"
+      [attr.aria-valuemax]="zMax"
+      [attr.aria-valuenow]="metallicity()"
+    />
+    <span class="sep-initial-controls__num">{{ metallicity().toFixed(4) }}</span>
+  </div>
+
+  @if (disabled()) {
+    <p class="sep-initial-controls__hint">{{ t('controls.disabledHint') }}</p>
+  }
+</div>

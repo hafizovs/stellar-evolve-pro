@@ -1,0 +1,80 @@
+.sep-time-player {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 10px 14px;
+  background: var(--sep-bg-panel-elevated);
+  border: 1px solid var(--sep-border);
+  border-radius: 8px;
+}
+
+.sep-time-player__accel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--sep-text-muted);
+  min-width: 160px;
+
+  input {
+    width: 100%;
+    accent-color: var(--sep-accent);
+  }
+}
+
+.sep-time-player__readouts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-family: var(--sep-font-mono);
+  color: var(--sep-text-muted);
+}
+
+.sep-time-player__phase {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+
+  &.phase--running {
+    color: var(--sep-accent);
+    background: rgba(62, 198, 255, 0.12);
+  }
+  &.phase--terminal {
+    color: var(--sep-danger);
+    background: rgba(255, 94, 94, 0.12);
+  }
+  &.phase--rewound {
+    color: var(--sep-accent-2);
+    background: rgba(240, 169, 74, 0.12);
+  }
+}
+
+.sep-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--sep-border);
+  background: var(--sep-bg-panel);
+  color: var(--sep-text);
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--sep-accent);
+    outline-offset: 2px;
+  }
+
+  &--primary {
+    background: var(--sep-accent);
+    border-color: var(--sep-accent);
+    color: var(--sep-bg-deep);
+    font-weight: 600;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

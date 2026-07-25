@@ -1,0 +1,10 @@
+export const BASE_DT_FRACTION = 0.002;
+export const DT_MIN_YEARS = 1e-8;
+export const DT_MAX_YEARS = 5e7;
+export const RATE_GAIN = 25;
+export const TIME_ACCEL_MIN = 0.25;
+export const TIME_ACCEL_MAX = 64;
+export const TIME_ACCEL_DEFAULT = 1;
+export const TRACK_MIN_DELTA_LOG_T = 0.002;
+export const TRACK_MIN_DELTA_LOG_L = 0.005;
+export const TRACK_MAX_POINTS = 4000;

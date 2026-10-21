@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { formatPercent } from '../../domain/stellar/format-stellar';
-import { I18nService } from '../../services/i18n.service';
-import { StarStore } from '../../state/star.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { StarStore } from '../control-room/star.store';
 
 @Component({
   selector: 'sep-composition-chart',

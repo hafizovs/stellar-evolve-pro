@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
-import { MassPresetId } from '../core/models/mass-preset.model';
-import { SimulationStore } from '../state/simulation.store';
-import { StarStore } from '../state/star.store';
-import { UiStore } from '../state/ui.store';
+import { MassPresetId } from '../models/mass-preset.model';
+import { SimulationStore } from '../../features/control-room/simulation.store';
+import { StarStore } from '../../features/control-room/star.store';
+import { UiStore } from '../ui/ui.store';
 import { I18nService } from './i18n.service';
 import { ScreenshotService } from './screenshot.service';
 

@@ -1,9 +1,9 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { LocaleId } from '../core/models/locale.model';
+import { LocaleId } from '../models/locale.model';
 import { EN_DICTIONARY } from '../i18n/dictionaries/en';
 import { RU_DICTIONARY } from '../i18n/dictionaries/ru';
 import { I18nKey } from '../i18n/i18n.keys';
-import { UiStore } from '../state/ui.store';
+import { UiStore } from '../ui/ui.store';
 
 const DICTIONARIES = {
   ru: RU_DICTIONARY,

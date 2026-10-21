@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MASS_PRESETS } from '../../core/constants/stellar.constants';
-import { MassPresetId } from '../../core/models/mass-preset.model';
+import { MASS_PRESETS } from '../../constants/stellar.constants';
+import { MassPresetId } from '../../models/mass-preset.model';
 import { I18nService } from '../../services/i18n.service';
 import { ScreenshotService } from '../../services/screenshot.service';
-import { SimulationStore } from '../../state/simulation.store';
-import { StarStore } from '../../state/star.store';
-import { UiStore } from '../../state/ui.store';
+import { SimulationStore } from '../../../features/control-room/simulation.store';
+import { StarStore } from '../../../features/control-room/star.store';
+import { UiStore } from '../../ui/ui.store';
 
 @Component({
   selector: 'sep-toolbar',

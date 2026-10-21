@@ -1,14 +1,14 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { HrTrackPoint } from '../core/models/hr-track-point.model';
-import { StarState } from '../core/models/star-params.model';
-import { DEFAULT_INITIAL_CONDITIONS } from '../core/models/initial-conditions.model';
+import { HrTrackPoint } from '../../core/models/hr-track-point.model';
+import { StarState } from '../../core/models/star-params.model';
+import { DEFAULT_INITIAL_CONDITIONS } from '../../core/models/initial-conditions.model';
 import {
   createTrackPoint,
   shouldAppendPoint,
   thinTrackIfNeeded,
   truncate,
-} from '../domain/hr/hr-track';
-import { createInitialStarState } from '../domain/stellar/star-step';
+} from '../../domain/hr/hr-track';
+import { createInitialStarState } from '../../domain/stellar/star-step';
 
 @Injectable({ providedIn: 'root' })
 export class StarStore {

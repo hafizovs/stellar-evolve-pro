@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { StarState } from '../core/models/star-params.model';
-import { estimateRemainingLifeYears } from '../domain/stellar/lifetime';
+import { StarState } from '../../core/models/star-params.model';
+import { estimateRemainingLifeYears } from '../../domain/stellar/lifetime';
 import {
   processDescriptionId,
   ProcessDescriptionId,
-} from '../domain/stellar/process-description';
-import { createInitialStarState, stepStar } from '../domain/stellar/star-step';
+} from '../../domain/stellar/process-description';
+import { createInitialStarState, stepStar } from '../../domain/stellar/star-step';
 
 @Injectable({ providedIn: 'root' })
 export class StellarPhysicsService {

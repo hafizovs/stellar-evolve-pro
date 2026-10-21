@@ -1,3 +1,7 @@
+## Live demo
+
+https://hafizovs.github.io/stellar-evolve-pro/
+
 # StellarEvolve Pro
 
 **StellarEvolve Pro** — интерактивный симулятор эволюции звёзд и HR-диаграммы на Angular 22+. Приложение использует параметрическую модель (scaling relations, Stefan–Boltzmann, стадийную машину), а **не** полный код MESA/1D hydro.
@@ -11,10 +15,11 @@ npm start
 
 Откройте `http://localhost:4200/`.
 
-## Тесты
+## Тесты и сборка
 
 ```bash
 npm test
+npm run build
 ```
 
 ## Горячие клавиши

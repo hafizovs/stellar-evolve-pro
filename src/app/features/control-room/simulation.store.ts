@@ -2,17 +2,17 @@ import { computed, Injectable, signal } from '@angular/core';
 import {
   DEFAULT_INITIAL_CONDITIONS,
   InitialConditions,
-} from '../core/models/initial-conditions.model';
-import { AppPhase } from '../core/models/app-phase.model';
-import { MassPresetId } from '../core/models/mass-preset.model';
+} from '../../core/models/initial-conditions.model';
+import { AppPhase } from '../../core/models/app-phase.model';
+import { MassPresetId } from '../../core/models/mass-preset.model';
 import {
   MASS_MAX_MSUN,
   MASS_MIN_MSUN,
   MASS_PRESETS,
   Z_MAX,
   Z_MIN,
-} from '../core/constants/stellar.constants';
-import { TIME_ACCEL_DEFAULT } from '../core/constants/time.constants';
+} from '../../core/constants/stellar.constants';
+import { TIME_ACCEL_DEFAULT } from '../../core/constants/time.constants';
 
 @Injectable({ providedIn: 'root' })
 export class SimulationStore {

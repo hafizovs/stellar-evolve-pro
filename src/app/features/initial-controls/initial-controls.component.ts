@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MASS_MAX_MSUN, MASS_MIN_MSUN, Z_MAX, Z_MIN } from '../../core/constants/stellar.constants';
-import { I18nService } from '../../services/i18n.service';
-import { SimulationStore } from '../../state/simulation.store';
-import { StarStore } from '../../state/star.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { SimulationStore } from '../control-room/simulation.store';
+import { StarStore } from '../control-room/star.store';
 
 @Component({
   selector: 'sep-initial-controls',

@@ -9,11 +9,11 @@ import {
   viewChild,
 } from '@angular/core';
 import { PULSE_OMEGA, RENDER_DPR_MAX } from '../../core/constants/render.constants';
-import { I18nService } from '../../services/i18n.service';
-import { RenderLoopService } from '../../services/render-loop.service';
-import { ScreenshotService } from '../../services/screenshot.service';
-import { StarStore } from '../../state/star.store';
-import { UiStore } from '../../state/ui.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { RenderLoopService } from '../../core/services/render-loop.service';
+import { ScreenshotService } from '../../core/services/screenshot.service';
+import { StarStore } from '../control-room/star.store';
+import { UiStore } from '../../core/ui/ui.store';
 import { createStarfieldCache, drawStarExterior } from './stellar-canvas.renderer';
 import { drawCoreSection } from './stellar-core-section.renderer';
 

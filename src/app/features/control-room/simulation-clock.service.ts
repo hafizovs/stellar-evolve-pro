@@ -1,7 +1,7 @@
 import { computed, DestroyRef, inject, Injectable, signal } from '@angular/core';
-import { computeAdaptiveDtYears, computeRelativeRate } from '../domain/stellar/adaptive-dt';
-import { SimulationStore } from '../state/simulation.store';
-import { StarStore } from '../state/star.store';
+import { computeAdaptiveDtYears, computeRelativeRate } from '../../domain/stellar/adaptive-dt';
+import { SimulationStore } from './simulation.store';
+import { StarStore } from './star.store';
 import { StellarPhysicsService } from './stellar-physics.service';
 
 @Injectable({ providedIn: 'root' })

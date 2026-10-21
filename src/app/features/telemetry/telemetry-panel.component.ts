@@ -7,9 +7,9 @@ import {
   formatRadiusSolar,
   formatTemperatureK,
 } from '../../domain/stellar/format-stellar';
-import { I18nService } from '../../services/i18n.service';
-import { StellarPhysicsService } from '../../services/stellar-physics.service';
-import { StarStore } from '../../state/star.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { StellarPhysicsService } from '../control-room/stellar-physics.service';
+import { StarStore } from '../control-room/star.store';
 import { CompositionChartComponent } from './composition-chart.component';
 
 @Component({

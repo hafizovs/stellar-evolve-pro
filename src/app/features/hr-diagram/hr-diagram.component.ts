@@ -26,10 +26,10 @@ import {
 } from '../../domain/hr/hr-static-regions';
 import { findNearestTrackIndex, trackPolyline } from '../../domain/hr/hr-track';
 import { spectralClassColor } from '../../domain/stellar/spectral-class';
-import { I18nService } from '../../services/i18n.service';
-import { SimulationStore } from '../../state/simulation.store';
-import { StarStore } from '../../state/star.store';
-import { UiStore } from '../../state/ui.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { SimulationStore } from '../control-room/simulation.store';
+import { StarStore } from '../control-room/star.store';
+import { UiStore } from '../../core/ui/ui.store';
 import { computePlotRect, mapStateToSvg, mapTrackPointToSvg } from './hr-diagram.mapper';
 
 @Component({

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
-import { UiStore } from '../../state/ui.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { UiStore } from '../../core/ui/ui.store';
 import { HrDiagramComponent } from '../hr-diagram/hr-diagram.component';
 import { InitialControlsComponent } from '../initial-controls/initial-controls.component';
 import { StellarViewComponent } from '../stellar-view/stellar-view.component';

@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TIME_ACCEL_MAX, TIME_ACCEL_MIN } from '../../core/constants/time.constants';
 import { formatAgeYears, formatDtYears } from '../../domain/stellar/format-stellar';
-import { I18nService } from '../../services/i18n.service';
-import { SimulationClockService } from '../../services/simulation-clock.service';
-import { SimulationStore } from '../../state/simulation.store';
-import { StarStore } from '../../state/star.store';
+import { I18nService } from '../../core/services/i18n.service';
+import { SimulationClockService } from '../control-room/simulation-clock.service';
+import { SimulationStore } from '../control-room/simulation.store';
+import { StarStore } from '../control-room/star.store';
 
 @Component({
   selector: 'sep-time-player',

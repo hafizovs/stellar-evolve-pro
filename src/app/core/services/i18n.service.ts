@@ -16,7 +16,7 @@ const warnedKeys = new Set<string>();
 export class I18nService {
   private readonly ui = inject(UiStore);
 
-  readonly locale = signal<LocaleId>('ru');
+  readonly locale = signal<LocaleId>('en');
 
   t(key: string, params: Record<string, string | number> = {}): string {
     const dictionary = DICTIONARIES[this.locale()] as Readonly<Record<string, string>>;

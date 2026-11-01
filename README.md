@@ -60,3 +60,7 @@ npm run build
 Educational parametric evolution: main sequence, giants, supernova / planetary nebula, and remnants (WD/NS/BH), using the Chandrasekhar and Oppenheimer–Volkoff limits. Numbers and thresholds are set in `docs/` of the parent `stellar_evolve_pro` package.
 
 **Disclaimer:** this is a simplified parametric model for visualization and teaching, not a replacement for MESA or other 1D stellar evolution codes.
+
+## Responsive layout
+
+Partial adaptive chrome for phone (~375px) and tablet (~768px): toolbars and panels stack or collapse on narrow viewports, with no page-level horizontal scroll. Desktop-first cores (canvas, boards, dense tables) stay simplified on small screens rather than a full mobile redesign.

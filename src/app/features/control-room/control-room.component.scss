@@ -29,11 +29,13 @@
 
 .sep-control-room__grid {
   display: grid;
-  grid-template-columns: minmax(280px, 1.1fr) minmax(320px, 1.3fr) 340px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 340px);
   grid-template-rows: 1fr;
   gap: 10px;
   flex: 1;
   min-height: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .sep-control-room__star,
@@ -63,5 +65,24 @@
 
   .sep-control-room__panel--hidden {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .sep-control-room {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .sep-control-room__tabs button {
+    padding: 10px 6px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .sep-control-room {
+    padding: 6px;
+    gap: 6px;
   }
 }
